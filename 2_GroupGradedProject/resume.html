@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Page</title>
+    <link rel="stylesheet" href="resume-styles.css">
+</head>
+
+<body>
+    <div id="navigation">
+        <button id="prevButton" onclick="prevResume()">Previous</button>
+        <input type="text" id="searchInput" placeholder="Search by job title" oninput="searchResumes()">
+        <button id="nextButton" onclick="nextResume()">Next</button>
+    </div>
+    <div class="resumeContainer">
+        <div class="header">
+            <h1 id="name"></h1>
+            <p id="applied"></p>
+            <img id="imageContainer" src="images/user.png"></img>
+        </div>
+        <div class="content">
+            <div class="left-column">
+                <div class="section">
+                    <h2>Personal Information</h2>
+                    <p id="email">Email: </p>
+                    <p id="phone">Phone: </p>
+                    <a id="social" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+                </div>
+                <div class="section">
+                    <h2>Technical Skills</h2>
+                    <ul id="technicalSkills" style="list-style-type: none;"></ul>
+                </div>
+                <div class="section">
+                    <h2>Hobbies</h2>
+                    <ul id="hobbies"></ul>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="section">
+                    <h2>Work Experience</h2>
+                    <p id="position"></p>
+                    <p id="duration"></p>
+                </div>
+                <div class="section">
+                    <h2>Projects</h2>
+                    <ul id="projects"></ul>
+                </div>
+                <div class="section">
+                    <h2>Education</h2>
+                    <ul id="education"></ul>
+                </div>
+                <div class="section">
+                    <h2>Internships</h2>
+                    <ul id="internships"></ul>
+                </div>
+                <div class="section">
+                    <h2>Achievements</h2>
+                    <ul id="achievements"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="resume-script.js"></script>
+</body>
+
+</html>
