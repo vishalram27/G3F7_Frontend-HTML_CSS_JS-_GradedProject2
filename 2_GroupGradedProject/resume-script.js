@@ -59,7 +59,7 @@ function prevResume() {
         displayResume(currentResumeIndex);
     }
     else {
-        alert('You are already in the 1st Resume, there is no back to go..');
+        alert('You are already in the 1st Resume, there is no resume to go previous..');
     }
     updateButtonVisibility();
 }
