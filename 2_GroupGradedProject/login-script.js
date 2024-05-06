@@ -13,16 +13,3 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
         document.getElementById('errorMessage').textContent = 'Invalid username/password';
     }
 });
-
-// Function to prevent back to login
-function preventBack() {
-    window.history.forward();
-}
-
-window.onload = function () {
-    preventBack();
-    window.history.pushState(null, "", window.location.href);
-    window.onpopstate = function () {
-        preventBack();
-    };
-};
