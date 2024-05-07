@@ -115,8 +115,9 @@ function searchResumes() {
         displayResume(currentResumeIndex);
         updateButtonVisibility();
     } else {
-        // Show an alert if no matching resumes found
-        alert('Invalid search or No applications for this job');
+        // Show an error page if no matching resumes found
+        var newUrl = "./nosearchresult.html";
+        window.location.replace(newUrl);
     }
 }
 
