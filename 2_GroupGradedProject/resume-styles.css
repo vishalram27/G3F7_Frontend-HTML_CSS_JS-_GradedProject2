@@ -134,6 +134,10 @@ h2 {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+#social {
+    text-decoration: none;
+}
+
 /* Content distribution */
 .content {
     display: flex;
@@ -151,6 +155,7 @@ h2 {
     margin-bottom: 20px;
     border-left: 5px solid #00b6c4;
     color: #333;
+    text-align: left;
 }
 
 .section h2 {
@@ -164,20 +169,26 @@ h2 {
 }
 
 .section ul li {
+    list-style: none;
     margin-bottom: 10px;
     padding-left: 16px;
     position: relative;
 }
 
 .section ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 7px;
-    width: 8px;
-    height: 8px;
+    content: '👉 ';
+    position: relative;
     border-radius: 50%;
-    background-color: #333;
+}
+
+.section p::before {
+    content: '👉 ';
+    position: relative;
+}
+
+.section a::before {
+    content: '👉 ';
+    position: relative;
 }
 
 #imageContainer {
