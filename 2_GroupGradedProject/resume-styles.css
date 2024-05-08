@@ -171,7 +171,6 @@ h2 {
 .section ul li {
     list-style: none;
     margin-bottom: 10px;
-    padding-left: 16px;
     position: relative;
 }
 
@@ -187,7 +186,7 @@ h2 {
 }
 
 .section a::before {
-    content: '👉 ';
+    content: '👉 LinkedIn: ';
     position: relative;
 }
 
@@ -210,7 +209,7 @@ h2 {
 
     .header,
     .section {
-        text-align: center;
+        text-align: left;
     }
 
     .section ul li::before {
