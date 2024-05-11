@@ -174,20 +174,19 @@ h2 {
     position: relative;
 }
 
+.section p {
+    list-style: none;
+}
+
 .section ul li::before {
     content: '👉 ';
     position: relative;
     border-radius: 50%;
 }
 
-.section p::before {
-    content: '👉 ';
-    position: relative;
-}
-
 .section a::before {
-    content: '👉 LinkedIn: ';
     position: relative;
+    color: #000;
 }
 
 #imageContainer {

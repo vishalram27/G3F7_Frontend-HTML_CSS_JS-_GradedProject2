@@ -24,9 +24,9 @@ function displayResume(index) {
     document.getElementById('name').textContent = resume.basics.name;
     document.getElementById('applied').textContent = `Applied for: ${resume.basics.AppliedFor}`;
 
-    document.getElementById('email').textContent = `Email: ${resume.basics.email}`;
-    document.getElementById('phone').textContent = `Phone: ${resume.basics.phone}`;
-    document.getElementById('social').textContent = resume.basics.profiles.url;
+    document.getElementById('email').innerHTML = `<ul><li><strong>Email: </strong>${resume.basics.email}</li></ul>`;
+    document.getElementById('phone').innerHTML = `<ul><li><strong>Phone: </strong>${resume.basics.phone}</li></ul>`;
+    document.getElementById('social').innerHTML = `<ul><li><strong style="color:black;">LinkedIn: </strong> ${resume.basics.profiles.url}</li></ul>`;
 
     let technicalSkillsList = document.getElementById('technicalSkills');
     technicalSkillsList.innerHTML = resume.skills.keywords.map(skill => `<li>${skill}</li>`).join('');
@@ -34,18 +34,27 @@ function displayResume(index) {
     let hobbiesList = document.getElementById('hobbies');
     hobbiesList.innerHTML = resume.interests.hobbies.map(hobby => `<li>${hobby}</li>`).join('');
 
-    document.getElementById('position').textContent = `${resume.work.CompanyName} - ${resume.work.Position} (${resume.work.StartDate} to ${resume.work.EndDate})`;
-    document.getElementById('duration').textContent = resume.work.Summary;
+    document.getElementById('position').innerHTML = `<ul><li><strong>Company Name : </strong>${resume.work.CompanyName} </li> <li><strong>Position : </strong> ${resume.work.Position}</li> <li><strong>Duration : </strong>${resume.work.StartDate} to ${resume.work.EndDate}</li></ul>`;
+    document.getElementById('duration').innerHTML = `<ul><li><strong>Summary : </strong>${resume.work.Summary}</li></ul>`;
 
-    let projectsList = document.getElementById('projects');
-    projectsList.innerHTML = `<li>${resume.projects.name}: ${resume.projects.description}</li>`;
+    let projectList = document.getElementById('projects');
+    projectList.innerHTML = `<li><strong>${resume.projects.name}:</strong> ${resume.projects.description}</li>`;
 
     let educationList = document.getElementById('education');
-    educationList.innerHTML = `<li>${resume.education.UG.institute} - ${resume.education.UG.course} (${resume.education.UG.StartDate} to ${resume.education.UG.EndDate}), CGPA: ${resume.education.UG.cgpa}</li>`;
+    educationList.innerHTML = `<ul>
+    <li><strong>UG : </strong>${resume.education.UG.institute} - ${resume.education.UG.course} (${resume.education.UG.StartDate} to ${resume.education.UG.EndDate}), CGPA: ${resume.education.UG.cgpa}</li> 
+    <li><strong>Senior Secondary : </strong>${resume.education["Senior Secondary"].institute}, CGPA: ${resume.education["Senior Secondary"].cgpa}</li> 
+    <li><strong>High School:  </strong>${resume.education["High School"].institute}, CGPA: ${resume.education["High School"].cgpa}</li>
+    </ul>`;
 
     if (resume.Internship) {
-        let internshipsList = document.getElementById('internships');
-        internshipsList.innerHTML = `<li>${resume.Internship.CompanyName} - ${resume.Internship.Position} (${resume.Internship.StartDate} to ${resume.Internship.EndDate}): ${resume.Internship.Summary}</li>`;
+        let internshipList = document.getElementById('internships');
+        internshipList.innerHTML = `<ul>
+        <li><strong>Company Name : </strong>${resume.Internship.CompanyName}</li>
+        <li><strong>Position : </strong>  ${resume.Internship.Position}</li> 
+        <li><strong>Duration : </strong> ${resume.Internship.StartDate} to ${resume.Internship.EndDate}</li> 
+        <li><strong>Summary : </strong>${resume.Internship.Summary}</li>
+        </ul>`;
     }
 
     let achievementsList = document.getElementById('achievements');
